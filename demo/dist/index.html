@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- replace tag <panel> to <div class="panel">-->
+    <div class="panel">
+        <div class="panel-heading">Outer Panel</div>
+        <div class="panel-body">
+            <div>Some outer content</div>
+            <div class="panel">
+                <div class="panel-heading">Inner Panel</div>
+                <div class="panel-body">
+                    <div>Some Inner content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="bootstrap-templates">
+        <bootstrap_button type="submit" class="some-class">
+            Bootstrap Button
+        </bootstrap_button>
+    </section>
+
+    <section id="foundation-templates">
+        <foundation_button type="submit" class="some-class">
+            Foundation Button
+        </foundation_button>
+    </section>
+
+
+
+    <script src="templater.jquery-min.js"></script>
+    <script>
+        $('#bootstrap-templates').templater({
+            tags: {
+                'bootstrap_button': '<button class="btn btn-default {{class}}" type="{{type}}">{{html}}</button>'
+            }
+        });
+
+        $('#foundation-templates').templater({
+            tags: {
+                'foundation_button': '<button class="button {{class}}" type="{{type}}">{{html}}</button>'
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
